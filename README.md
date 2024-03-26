@@ -1,7 +1,10 @@
 # Victron_BMV_bit_unpacking_example
  
 This is an example of how to unpack the "Aux Input" and "Battery Current" fields
-from Victron BMV devices' extra manufacturer data BLE broadcasts.
+from Victron BMV devices' extra manufacturer data BLE broadcasts. Note that this
+is not complete, as it does not include code to actually receive and unencrypt the
+Victron-provided BLE extra manufacturer data. You will need to integrate the sample
+coding below into a larger, more functional program.
 
 This is related to the code in my Victron BLE decoding example:
 
