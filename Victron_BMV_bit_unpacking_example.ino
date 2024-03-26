@@ -53,7 +53,7 @@ void loop() {
   //
   // Where:
   //    AA - two bits for Aux Input data.
-  //      SBBBBB - a sign bit plus the upper-most 5 bits of the Battery Current data
+  //      sBBBBB - a sign bit plus the upper-most 5 bits of the Battery Current data
   //    CCCCCCCC - middle 8 bits of Battery Current data
   //    DDDDDDDD - lower 8 bits of Battery Current data
   //
@@ -75,7 +75,7 @@ void loop() {
   // Strip the auxInput bits out of our byte0 data:
   byte0 = byte0 & 0x3f;
 
-  // Construct a 32-bit value out of 00000000 00SBBBBBB CCCCCCCC DDDDDDDD. I need to explicitly cast the byte
+  // Construct a 32-bit value out of 00000000 00sBBBBBB CCCCCCCC DDDDDDDD. I need to explicitly cast the byte
   // values to long so the compiler doesn't complain about the shifts:
   long batteryCurrentCount = ((long)byte0 << 16) | ((long)byte1 << 8) | ((long)byte2);
 
@@ -83,7 +83,7 @@ void loop() {
   // the uppermost (sign) bit that came from our 0x3f-masked byte0 data. We'll see if that bit is set
   // and then use it to set (or not set) the forced-zero bits of the 32-bit long signed value.
   if (batteryCurrentCount & 0x00200000) {
-    // The 'sign' bit of the six-bit-wide byte0 value is set, so extend it to the top two bits
+    // The 'sign' bit of the six-bit-wide byte0 value is set, so extend it to the top 10 bits
     // to make the 32-bit batteryCurrentCount into a proper signed value.
     batteryCurrentCount = batteryCurrentCount | 0xffc00000;
   }
