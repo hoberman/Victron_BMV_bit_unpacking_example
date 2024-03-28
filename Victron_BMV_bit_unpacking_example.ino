@@ -3,16 +3,16 @@
 // is not complete, as it does not include code to actually receive and unencrypt the
 // Victron-provided BLE extra manufacturer data. You will need to integrate the sample
 // coding below into a larger, more functional program.
-// 
+//
 // This is related to the code in my Victron BLE decoding example:
 //
 // https://github.com/hoberman/Victron_BLE_Advertising_example/blob/main/Victron_BLE_Advertising_example.ino
 //
 //   Information on the "extra manufacturer data" that we're picking up from Victron SmartSolar
 //   BLE advertising beacons can be found at:
-//  
+//
 //     https://community.victronenergy.com/storage/attachments/48745-extra-manufacturer-data-2022-12-14.pdf
-//  
+//
 // Thanks, Victron, for providing both the beacon and the documentation on its contents!
 //
 //
