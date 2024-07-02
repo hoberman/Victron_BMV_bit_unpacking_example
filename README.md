@@ -1,5 +1,18 @@
 # Victron_BMV_bit_unpacking_example
- 
+
+Please note: Based on some questions from people attempting to use my sample code I
+realize I may have a big-vs-little-endian byte ordering problem. Because of this, I have
+created a revised version as a second try at getting this right. 
+
+See the revised code at:
+
+  https://github.com/hoberman/Victron_BMV_bit_unpacking_example_revised
+
+If it turns out that the revised code leads you to find the right way to decode the BMV Battery
+Current field, please let me know so I can decommission my original version of the code.
+
+
+
 This is an example of how to unpack the "Aux Input" and "Battery Current" fields
 from Victron BMV devices' extra manufacturer data BLE broadcasts. Note that this
 is not complete, as it does not include code to actually receive and unencrypt the
