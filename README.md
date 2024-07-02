@@ -12,7 +12,6 @@ If it turns out that the revised code leads you to find the right way to decode 
 Current field, please let me know so I can decommission my original version of the code.
 
 
-
 This is an example of how to unpack the "Aux Input" and "Battery Current" fields
 from Victron BMV devices' extra manufacturer data BLE broadcasts. Note that this
 is not complete, as it does not include code to actually receive and unencrypt the
